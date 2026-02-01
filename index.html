@@ -3,225 +3,86 @@
 <head>
   <meta charset="UTF-8" />
   <title>Sobolev–Ozok Lattice (SOL)</title>
-  <meta name="description" content="Sobolev–Ozok Lattice (SOL): a Planck-cell coherence framework for emergent spacetime, quantum dynamics, and physical constants." />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <style>
     :root{
-      --bg: #0b0f14;
-      --panel: rgba(255,255,255,0.06);
-      --panel2: rgba(255,255,255,0.09);
+      --bg:#0b0f14;
       --text: rgba(255,255,255,0.92);
-      --muted: rgba(255,255,255,0.68);
+      --muted: rgba(255,255,255,0.70);
       --faint: rgba(255,255,255,0.12);
-      --link: rgba(255,255,255,0.92);
-
-      /* SOL-ish accent: coherence gradient */
       --grad: linear-gradient(90deg, #42f59b 0%, #f2e85e 35%, #ff9d5c 60%, #b08cff 100%);
-      --shadow: 0 12px 40px rgba(0,0,0,0.45);
     }
-
-    *{ box-sizing:border-box; }
-    html,body{ height:100%; }
+    *{box-sizing:border-box}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color: var(--text);
       background:
         radial-gradient(1200px 600px at 20% 0%, rgba(66,245,155,0.10), transparent 60%),
         radial-gradient(1000px 500px at 80% 10%, rgba(176,140,255,0.10), transparent 55%),
         radial-gradient(900px 500px at 50% 100%, rgba(255,157,92,0.08), transparent 60%),
         var(--bg);
-      line-height: 1.6;
+      line-height:1.6;
     }
+    a{color:var(--text); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:980px; margin:0 auto; padding:28px 18px 70px;}
 
-    a{ color: var(--link); text-decoration:none; }
-    a:hover{ text-decoration: underline; }
-
-    .wrap{
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 28px 18px 70px;
-    }
-
-    /* Top bar */
     .topbar{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap: 14px;
-      padding: 14px 16px;
+      display:flex; justify-content:space-between; align-items:center; gap:12px;
+      padding:14px 16px;
+      border-radius:14px;
+      border:1px solid var(--faint);
       background: rgba(255,255,255,0.04);
-      border: 1px solid var(--faint);
-      border-radius: 14px;
       backdrop-filter: blur(10px);
-      box-shadow: var(--shadow);
-      position: sticky;
-      top: 14px;
-      z-index: 30;
     }
-
-    .brand{
-      display:flex;
-      align-items:center;
-      gap: 12px;
-      min-width: 220px;
-    }
-
-    .sig{
-      width: 34px; height: 34px;
-      border-radius: 10px;
-      background: var(--grad);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.35);
-      border: 1px solid rgba(255,255,255,0.18);
-    }
-
-    .brand h1{
-      font-size: 14px;
-      margin:0;
-      letter-spacing: 0.2px;
-      font-weight: 650;
-    }
-    .brand .sub{
-      margin:0;
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    nav{
-      display:flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
+    .brand{display:flex; align-items:center; gap:12px;}
+    .sig{width:34px; height:34px; border-radius:10px; background:var(--grad); border:1px solid rgba(255,255,255,0.18);}
+    .brand b{font-size:14px}
+    .brand small{display:block; color:var(--muted); font-size:12px; margin-top:2px}
+    nav{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
     .navlink{
-      padding: 10px 12px;
-      border-radius: 12px;
-      border: 1px solid rgba(255,255,255,0.12);
+      padding:9px 12px; border-radius:12px;
+      border:1px solid rgba(255,255,255,0.12);
       background: rgba(255,255,255,0.03);
-      font-size: 13px;
-      color: rgba(255,255,255,0.88);
-    }
-    .navlink:hover{
-      background: rgba(255,255,255,0.06);
-      text-decoration:none;
+      font-size:13px; color:rgba(255,255,255,0.88);
     }
 
-    /* Hero */
     .hero{
-      margin-top: 26px;
-      padding: 26px 20px;
-      border-radius: 18px;
-      border: 1px solid var(--faint);
-      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
-      box-shadow: var(--shadow);
-      overflow:hidden;
-      position:relative;
-    }
-
-    .hero:before{
-      content:"";
-      position:absolute;
-      inset:-2px;
-      background: var(--grad);
-      opacity: 0.16;
-      filter: blur(30px);
-      z-index:0;
-    }
-
-    .hero > *{ position:relative; z-index:1; }
-
-    .title{
-      font-size: 42px;
-      line-height: 1.15;
-      margin: 0 0 10px;
-      letter-spacing: -0.6px;
-    }
-
-    .lead{
-      margin: 0;
-      font-size: 16px;
-      color: rgba(255,255,255,0.80);
-      max-width: 78ch;
-    }
-
-    .pillrow{
-      margin-top: 16px;
-      display:flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .pill{
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-size: 12px;
-      border: 1px solid rgba(255,255,255,0.14);
+      margin-top:18px;
+      padding:22px 18px;
+      border-radius:18px;
+      border:1px solid var(--faint);
       background: rgba(255,255,255,0.04);
-      color: rgba(255,255,255,0.78);
     }
+    h1{margin:0 0 10px; font-size:40px; letter-spacing:-0.6px; line-height:1.15;}
+    p{margin:0}
+    .muted{color:var(--muted)}
 
-    /* Sections as cards */
-    .grid{
-      margin-top: 22px;
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-    }
-
-    .card{
-      padding: 18px 18px;
-      border-radius: 18px;
-      border: 1px solid var(--faint);
-      background: rgba(255,255,255,0.04);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-    }
-
-    .card h2{
-      margin: 0 0 10px;
-      font-size: 18px;
-      letter-spacing: 0.1px;
-    }
-
-    ul{ margin: 10px 0 0 18px; color: rgba(255,255,255,0.82); }
-    li{ margin: 6px 0; }
-
-    /* Figure */
     figure{
-      margin: 18px 0 0;
-      padding: 16px;
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(0,0,0,0.20);
+      margin:16px 0 0;
+      padding:14px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,0.12);
+      background: rgba(0,0,0,0.22);
     }
+    figure img{width:100%; height:auto; display:block; border-radius:12px;}
+    figcaption{margin-top:10px; color:var(--muted); font-size:13px;}
 
-    figure img{
-      width: 100%;
-      height: auto;
-      display:block;
-      border-radius: 12px;
-      box-shadow: 0 14px 40px rgba(0,0,0,0.35);
+    .grid{display:grid; grid-template-columns:1fr; gap:14px; margin-top:14px;}
+    .card{
+      padding:18px;
+      border-radius:18px;
+      border:1px solid var(--faint);
+      background: rgba(255,255,255,0.04);
     }
+    .card h2{margin:0 0 8px; font-size:18px}
+    ul{margin:10px 0 0 18px; color: rgba(255,255,255,0.84);}
+    li{margin:6px 0}
+    .footer{margin-top:24px; text-align:center; color:var(--muted); font-size:12.5px;}
 
-    figcaption{
-      margin-top: 12px;
-      font-size: 13px;
-      color: rgba(255,255,255,0.70);
-    }
-
-    .footer{
-      margin-top: 26px;
-      color: rgba(255,255,255,0.55);
-      font-size: 12.5px;
-      text-align:center;
-    }
-
-    /* Mobile tweaks */
-    @media (max-width: 620px){
-      .title{ font-size: 32px; }
-      .topbar{ position: static; }
-      .brand{ min-width: unset; }
+    @media (max-width:620px){
+      h1{font-size:30px}
     }
   </style>
 </head>
@@ -233,5 +94,71 @@
       <div class="brand">
         <div class="sig" aria-hidden="true"></div>
         <div>
-          <h1>Sobolev–Ozok Lattice (SOL)</h1>
-          <p
+          <b>Sobolev–Ozok Lattice (SOL)</b>
+          <small>Planck-cell coherence → emergent geometry</small>
+        </div>
+      </div>
+      <nav>
+        <a class="navlink" href="index.html">Home</a>
+        <a class="navlink" href="papers.html">Papers</a>
+        <a class="navlink" href="#predictions">Predictions</a>
+        <a class="navlink" href="https://github.com/ozokozcaSOL/Sobolev-Ozok-Lattice" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+
+    <section class="hero">
+      <h1>Sobolev–Ozok Lattice (SOL)</h1>
+      <p class="muted">
+        The <b>Sobolev–Ozok Lattice (SOL)</b> is a Planck-scale lattice framework in which spacetime curvature,
+        quantum dynamics, and physical constants emerge from coherence and resolution interactions between discrete cells.
+      </p>
+
+      <figure>
+        <img src="figures/figure1-sol-lattice.png" alt="Figure 1: SOL Planck-cell lattice with coherence gradient">
+        <figcaption>
+          <b>Figure 1.</b> Conceptual illustration of the SOL lattice. Spatial variations in inter-cell coherence (color gradient)
+          define an effective geometric structure at macroscopic scales.
+        </figcaption>
+      </figure>
+    </section>
+
+    <div class="grid">
+      <section class="card">
+        <h2>Core Idea</h2>
+        <ul>
+          <li>Spacetime is modeled as a discrete lattice of Planck-scale cells.</li>
+          <li>Coherence gradients between cells generate an effective geometric structure (metric).</li>
+          <li>Quantum behavior arises from resolution dynamics rather than postulates.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Scope</h2>
+        <ul>
+          <li>Emergent metric and recovery of General Relativity at macroscopic scales.</li>
+          <li>Derivation of physical constants from lattice coherence structure.</li>
+          <li>Applications to solar system tests, galaxy rotation, and black hole phenomena.</li>
+        </ul>
+      </section>
+
+      <section class="card" id="predictions">
+        <h2>Predictions & Falsifiability</h2>
+        <p class="muted">
+          Higher-order coherence corrections (k ≥ 2) introduce small, scale-dependent deviations from standard General Relativity.
+          These deviations are testable in planetary precession, galaxy rotation curves, and black hole shadow profiles.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Papers & Manuscripts</h2>
+        <p class="muted">See <a href="papers.html">papers.html</a> for Zenodo records and manuscripts.</p>
+      </section>
+    </div>
+
+    <div class="footer">
+      Maintained by Ozcan Ozok · <a href="papers.html">Papers</a> · <a href="https://github.com/ozokozcaSOL/Sobolev-Ozok-Lattice" target="_blank" rel="noopener">Repository</a>
+    </div>
+
+  </div>
+</body>
+</html>
