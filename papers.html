@@ -2,73 +2,273 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>SOL Papers</title>
+  <title>SOL — Papers</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-      line-height: 1.6;
-      color: #111;
+    :root{
+      --bg:#0b0f14;
+      --text: rgba(255,255,255,0.92);
+      --muted: rgba(255,255,255,0.70);
+      --faint: rgba(255,255,255,0.12);
+      --panel: rgba(255,255,255,0.04);
+      --panel2: rgba(0,0,0,0.22);
+      --grad: linear-gradient(90deg, #42f59b 0%, #f2e85e 35%, #ff9d5c 60%, #b08cff 100%);
+      --shadow: 0 12px 40px rgba(0,0,0,0.45);
     }
-    a {
-      color: #0366d6;
-      text-decoration: none;
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(1200px 600px at 20% 0%, rgba(66,245,155,0.10), transparent 60%),
+        radial-gradient(1000px 500px at 80% 10%, rgba(176,140,255,0.10), transparent 55%),
+        radial-gradient(900px 500px at 50% 100%, rgba(255,157,92,0.08), transparent 60%),
+        var(--bg);
+      line-height:1.6;
     }
-    a:hover {
-      text-decoration: underline;
+
+    a{ color: var(--text); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+
+    .wrap{ max-width: 980px; margin: 0 auto; padding: 28px 18px 70px; }
+
+    /* Top bar */
+    .topbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      padding:14px 16px;
+      border-radius:14px;
+      border:1px solid var(--faint);
+      background: rgba(255,255,255,0.04);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 14px;
+      z-index: 30;
     }
-    .section {
-      margin-top: 2rem;
+
+    .brand{ display:flex; align-items:center; gap:12px; }
+    .sig{
+      width:34px; height:34px;
+      border-radius:10px;
+      background: var(--grad);
+      border: 1px solid rgba(255,255,255,0.18);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+    }
+    .brand b{ font-size:14px; }
+    .brand small{ display:block; color:var(--muted); font-size:12px; margin-top:2px; }
+
+    nav{ display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end; }
+    .navlink{
+      padding:9px 12px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.03);
+      font-size:13px;
+      color: rgba(255,255,255,0.88);
+    }
+    .navlink:hover{ text-decoration:none; background: rgba(255,255,255,0.06); }
+
+    /* Header */
+    .hero{
+      margin-top: 18px;
+      padding: 22px 18px;
+      border-radius: 18px;
+      border: 1px solid var(--faint);
+      background: var(--panel);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero:before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background: var(--grad);
+      opacity: 0.12;
+      filter: blur(30px);
+      z-index:0;
+    }
+    .hero > *{ position:relative; z-index:1; }
+
+    h1{
+      margin:0 0 8px;
+      font-size: 34px;
+      letter-spacing:-0.5px;
+      line-height:1.15;
+    }
+    .lead{ margin:0; color: var(--muted); max-width: 80ch; }
+
+    .grid{ display:grid; grid-template-columns:1fr; gap: 14px; margin-top: 14px; }
+
+    /* Paper card */
+    .paper{
+      padding: 18px;
+      border-radius: 18px;
+      border: 1px solid var(--faint);
+      background: rgba(255,255,255,0.04);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.22);
+    }
+
+    .paper h2{
+      margin: 0 0 6px;
+      font-size: 18px;
+      letter-spacing: 0.1px;
+    }
+
+    .meta{
+      margin: 0 0 10px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .buttons{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top: 10px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding: 9px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(0,0,0,0.18);
+      font-size: 13px;
+      color: rgba(255,255,255,0.88);
+    }
+    .btn:hover{
+      background: rgba(255,255,255,0.06);
+      text-decoration:none;
+    }
+
+    .tagrow{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      margin-top: 10px;
+    }
+    .tag{
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.03);
+      color: rgba(255,255,255,0.78);
+    }
+
+    .footer{
+      margin-top: 24px;
+      text-align:center;
+      color: var(--muted);
+      font-size: 12.5px;
+    }
+
+    @media (max-width: 620px){
+      .topbar{ position: static; }
+      h1{ font-size: 28px; }
     }
   </style>
 </head>
+
 <body>
+  <div class="wrap">
 
-<h1>Papers</h1>
-<p>This page lists the primary SOL manuscripts with stable Zenodo records.</p>
+    <div class="topbar">
+      <div class="brand">
+        <div class="sig" aria-hidden="true"></div>
+        <div>
+          <b>Sobolev–Ozok Lattice (SOL)</b>
+          <small>Manuscripts & Zenodo records</small>
+        </div>
+      </div>
 
-<div class="section">
-  <h2>Foundational & Framework</h2>
-  <ul>
-    <li>
-      <strong><a href="https://zenodo.org/records/18447688" target="_blank">
-      The Sobolev–Ozok Lattice (SOL) Model: A Discrete Framework for Spacetime and Energy Dynamics
-      </a></strong><br/>
-      Zenodo Record: <a href="https://zenodo.org/records/18447688" target="_blank">18447688</a>
-    </li>
-  </ul>
-</div>
+      <nav>
+        <a class="navlink" href="index.html">Home</a>
+        <a class="navlink" href="papers.html">Papers</a>
+        <a class="navlink" href="index.html#predictions">Predictions</a>
+        <a class="navlink" href="https://github.com/ozokozcaSOL/Sobolev-Ozok-Lattice" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </div>
 
-<div class="section">
-  <h2>Physical Structure & Planck Scale</h2>
-  <ul>
-    <li>
-      <strong><a href="https://zenodo.org/records/18447949" target="_blank">
-      Emergence of the Planck Length from Wave Support Limits in the Sobolev–Ozok Lattice Framework
-      </a></strong><br/>
-      Zenodo Record: <a href="https://zenodo.org/records/18447949" target="_blank">18447949</a>
-    </li>
-  </ul>
-</div>
+    <section class="hero">
+      <h1>Papers</h1>
+      <p class="lead">
+        Stable public records of SOL manuscripts are archived on Zenodo. This page lists the current core papers.
+      </p>
+    </section>
 
-<div class="section">
-  <h2>Gravity & Coherence Coupling</h2>
-  <ul>
-    <li>
-      <strong><a href="https://zenodo.org/records/18448209" target="_blank">
-      Gravitational Coupling as Emergent Coherence Stiffness in the Sobolev–Ozok Lattice (SOL) Framework
-      </a></strong><br/>
-      Zenodo Record: <a href="https://zenodo.org/records/18448209" target="_blank">18448209</a>
-    </li>
-  </ul>
-</div>
+    <div class="grid">
 
-<p style="margin-top: 2rem;">
-  <a href="index.html">← Back to SOL homepage</a>
-</p>
+      <section class="paper">
+        <h2>
+          <a href="https://zenodo.org/records/18447688" target="_blank" rel="noopener">
+            The Sobolev–Ozok Lattice (SOL) Model: A Discrete Framework for Spacetime and Energy Dynamics
+          </a>
+        </h2>
+        <p class="meta">Zenodo record: 18447688</p>
 
+        <div class="tagrow">
+          <span class="tag">Foundations</span>
+          <span class="tag">Discrete spacetime</span>
+          <span class="tag">Coherence dynamics</span>
+        </div>
+
+        <div class="buttons">
+          <a class="btn" href="https://zenodo.org/records/18447688" target="_blank" rel="noopener">Open on Zenodo</a>
+        </div>
+      </section>
+
+      <section class="paper">
+        <h2>
+          <a href="https://zenodo.org/records/18447949" target="_blank" rel="noopener">
+            Emergence of the Planck Length from Wave Support Limits in the Sobolev–Ozok Lattice Framework
+          </a>
+        </h2>
+        <p class="meta">Zenodo record: 18447949</p>
+
+        <div class="tagrow">
+          <span class="tag">Planck scale</span>
+          <span class="tag">Wave support limits</span>
+          <span class="tag">ℓ<sub>p</sub> emergence</span>
+        </div>
+
+        <div class="buttons">
+          <a class="btn" href="https://zenodo.org/records/18447949" target="_blank" rel="noopener">Open on Zenodo</a>
+        </div>
+      </section>
+
+      <section class="paper">
+        <h2>
+          <a href="https://zenodo.org/records/18448209" target="_blank" rel="noopener">
+            Gravitational Coupling as Emergent Coherence Stiffness in the Sobolev–Ozok Lattice (SOL) Framework
+          </a>
+        </h2>
+        <p class="meta">Zenodo record: 18448209</p>
+
+        <div class="tagrow">
+          <span class="tag">Gravity</span>
+          <span class="tag">Coherence stiffness</span>
+          <span class="tag">Emergent coupling</span>
+        </div>
+
+        <div class="buttons">
+          <a class="btn" href="https://zenodo.org/records/18448209" target="_blank" rel="noopener">Open on Zenodo</a>
+        </div>
+      </section>
+
+    </div>
+
+    <div class="footer">
+      Maintained by Ozcan Ozok · <a href="index.html">Home</a> · <a href="https://zenodo.org/" target="_blank" rel="noopener">Zenodo</a>
+    </div>
+
+  </div>
 </body>
 </html>
