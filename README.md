@@ -1,6 +1,6 @@
 # Sobolev–Ozok Lattice (SOL)
 
-Official project page for the **Sobolev–Ozok Lattice (SOL)** — a Planck-cell coherence framework for emergent spacetime, quantum dynamics, and physical constants.
+Official project page for the **Sobolev-Ozok Lattice (SOL)** — a Planck-cell coherence framework for emergent spacetime, quantum dynamics, and physical constants.
 
 ## Overview
 The SOL framework models spacetime as a discrete lattice of Planck-scale cells whose coherence and resolution dynamics give rise to:
