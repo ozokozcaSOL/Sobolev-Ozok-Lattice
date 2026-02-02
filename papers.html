@@ -34,6 +34,44 @@
     a:hover{ text-decoration:underline; }
 
     .wrap{ max-width: 980px; margin: 0 auto; padding: 28px 18px 70px; }
+   
+    /* Research map */
+    .map {
+      margin-top: 14px;
+      padding: 18px;
+      border-radius: 18px;
+      border: 1px solid var(--faint);
+      background: rgba(255,255,255,0.04);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.22);
+    }
+    
+    .map h2 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      letter-spacing: 0.2px;
+    }
+    
+    .map p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    
+    .map .flow {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    
+    .map .node {
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 12.5px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(0,0,0,0.18);
+      color: rgba(255,255,255,0.85);
+    }
 
     /* Top bar */
     .topbar{
@@ -237,6 +275,24 @@
       <p class="lead">
         Stable public records of SOL manuscripts are archived on Zenodo. This page is generated from a single paper list (easy to maintain).
       </p>
+    </section>
+    <section class="map">
+      <h2>SOL Research Map</h2>
+      <p>
+        The Sobolev–Ozok Lattice (SOL) program develops a discrete coherence framework
+        progressing from foundational structure to physical laws, cosmology, and
+        observational tests.
+      </p>
+    
+      <div class="flow">
+        <span class="node">Foundations</span>
+        <span class="node">Mathematical Structure</span>
+        <span class="node">Emergent Geometry (GR)</span>
+        <span class="node">Cosmology</span>
+        <span class="node">Black Holes</span>
+        <span class="node">Galaxies</span>
+        <span class="node">Particles</span>
+      </div>
     </section>
 
     <!-- Render target -->
