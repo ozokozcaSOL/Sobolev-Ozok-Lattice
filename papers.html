@@ -71,6 +71,8 @@
       border: 1px solid rgba(255,255,255,0.14);
       background: rgba(0,0,0,0.18);
       color: rgba(255,255,255,0.85);
+      .node { text-decoration: none; }
+      .node:hover { background: rgba(255,255,255,0.08); }
     }
 
     /* Top bar */
@@ -285,13 +287,13 @@
       </p>
     
       <div class="flow">
-        <span class="node">Foundations</span>
-        <span class="node">Mathematical Structure</span>
-        <span class="node">Emergent Geometry (GR)</span>
-        <span class="node">Cosmology</span>
-        <span class="node">Black Holes</span>
-        <span class="node">Galaxies</span>
-        <span class="node">Particles</span>
+        <a class="node" href="#foundations-core">Foundations</a>
+        <a class="node" href="#mathematics-structure">Mathematical Structure</a>
+        <a class="node" href="#gr-from-sol">Emergent Geometry (GR)</a>
+        <a class="node" href="#cosmology">Cosmology</a>
+        <a class="node" href="#black-holes">Black Holes</a>
+        <a class="node" href="#galaxies-tests">Galaxies</a>
+        <a class="node" href="#particle-structure">Particles</a>
       </div>
     </section>
 
@@ -491,15 +493,20 @@
     const html = orderedSections.map(sectionName => {
       const items = groups.get(sectionName) || [];
       const cards = items.map(paperCard).join("");
-      return `
-        <div class="section-title">
-          <h2>${escapeHtml(sectionName)}</h2>
-          <span class="count">${items.length}</span>
-        </div>
-        <div class="grid">
-          ${cards}
-        </div>
-      `;
+    const sectionId = sectionName
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/(^-|-$)/g, "");
+    
+    return `
+      <div class="section-title" id="${sectionId}">
+        <h2>${escapeHtml(sectionName)}</h2>
+        <span class="count">${items.length}</span>
+      </div>
+      <div class="grid">
+        ${cards}
+      </div>
+    `;
     }).join("");
 
     root.innerHTML = html;
