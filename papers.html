@@ -28,7 +28,6 @@
         radial-gradient(900px 500px at 50% 100%, rgba(255,157,92,0.08), transparent 60%),
         var(--bg);
       line-height:1.6;
-      html { scroll-behavior: smooth; }
     }
 
     a{ color: var(--text); text-decoration:none; }
@@ -105,91 +104,36 @@
     }
     .lead{ margin:0; color: var(--muted); max-width: 80ch; }
 
-    /* Option B: Research Map */
-    .map{
-      margin-top: 14px;
-      padding: 16px 18px;
-      border-radius: 18px;
-      border: 1px solid var(--faint);
-      background: rgba(255,255,255,0.035);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.20);
-      position: relative;
-      overflow: hidden;
-    }
-    .map:before{
-      content:"";
-      position:absolute;
-      inset:-2px;
-      background: var(--grad);
-      opacity: 0.10;
-      filter: blur(28px);
-      z-index:0;
-    }
-    .map > *{ position:relative; z-index:1; }
-
-    .maphead{
-      display:flex;
-      justify-content:space-between;
-      align-items:flex-start;
-      gap:12px;
-      flex-wrap:wrap;
-    }
-    .maphead h2{
-      margin:0;
-      font-size: 16px;
-      letter-spacing: 0.2px;
-    }
-    .maphead p{
-      margin: 2px 0 0;
-      color: var(--muted);
-      font-size: 13px;
-      max-width: 80ch;
-    }
-
-    .maplinks{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin-top: 12px;
-    }
-
-    .pill{
-      padding: 7px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.14);
-      background: rgba(0,0,0,0.14);
-      font-size: 12.5px;
-      color: rgba(255,255,255,0.82);
-    }
-    .pill:hover{ text-decoration:none; background: rgba(255,255,255,0.06); }
-
-    /* Option A: Section titles */
+    /* Section headers */
     .section-title{
-      margin: 18px 2px 10px;
-      padding-top: 6px;
-      font-size: 14px;
-      letter-spacing: 0.6px;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.78);
+      margin: 18px 0 8px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--faint);
+      background: rgba(255,255,255,0.03);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.18);
       display:flex;
       align-items:center;
-      gap:10px;
+      justify-content:space-between;
+      gap:12px;
     }
-    .section-title:after{
-      content:"";
-      flex:1;
-      height:1px;
-      background: rgba(255,255,255,0.10);
+    .section-title h2{
+      margin:0;
+      font-size: 14px;
+      letter-spacing: 0.2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.78);
     }
-
-    .section-lead{
-      margin: 0 2px 12px;
+    .section-title .count{
+      font-size: 12px;
       color: var(--muted);
-      font-size: 13px;
-      max-width: 95ch;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(0,0,0,0.18);
     }
 
-    .grid{ display:grid; grid-template-columns:1fr; gap: 14px; margin-top: 10px; }
+    .grid{ display:grid; grid-template-columns:1fr; gap: 14px; margin-top: 14px; }
 
     /* Paper card */
     .paper{
@@ -204,7 +148,6 @@
       margin: 0 0 6px;
       font-size: 18px;
       letter-spacing: 0.1px;
-      line-height: 1.35;
     }
 
     .meta{
@@ -256,7 +199,7 @@
       font-size: 12.5px;
     }
 
-    .site-status{
+    .site-status {
       font-size: 0.85rem;
       color: rgba(255, 255, 255, 0.6);
       margin-bottom: 0.35rem;
@@ -292,302 +235,12 @@
     <section class="hero">
       <h1>Papers</h1>
       <p class="lead">
-        Stable public records of SOL manuscripts are archived on Zenodo. This page groups the core papers by theme.
+        Stable public records of SOL manuscripts are archived on Zenodo. This page is generated from a single paper list (easy to maintain).
       </p>
     </section>
 
-    <!-- Option B: Research Map -->
-    <section class="map" aria-label="SOL research map">
-      <div class="maphead">
-        <div>
-          <h2>Research Map</h2>
-          <p>
-            A quick orientation guide: SOL foundations → mathematical structure → emergent geometry/constants → cosmology → astrophysical validations.
-          </p>
-        </div>
-      </div>
-
-      <div class="maplinks">
-        <a class="pill" href="#foundations">Foundations</a>
-        <a class="pill" href="#math">Mathematics & Continuum</a>
-        <a class="pill" href="#geometry">Geometry & Constants</a>
-        <a class="pill" href="#cosmology">Cosmology</a>
-        <a class="pill" href="#astrophysics">Astrophysics</a>
-        <a class="pill" href="#particles">Particles & Mass Relations</a>
-      </div>
-    </section>
-
-    <!-- Option A: Grouped sections -->
-
-    <div class="section-title" id="foundations">Foundations</div>
-    <p class="section-lead">
-      Core definition of the SOL framework and its basic physical assumptions (discrete Planck-scale lattice, coherence, and resolution dynamics).
-    </p>
-
-    <div class="grid">
-      <section class="paper">
-        <h3>
-          <a href="https://zenodo.org/records/18447688" target="_blank" rel="noopener">
-            The Sobolev–Ozok Lattice (SOL) Model: A Discrete Framework for Spacetime and Energy Dynamics
-          </a>
-        </h3>
-        <p class="meta">Zenodo record: 18447688</p>
-
-        <div class="tagrow">
-          <span class="tag">Foundations</span>
-          <span class="tag">Discrete spacetime</span>
-          <span class="tag">Coherence dynamics</span>
-        </div>
-
-        <div class="buttons">
-          <a class="btn" href="https://zenodo.org/records/18447688" target="_blank" rel="noopener">Open on Zenodo</a>
-        </div>
-      </section>
-    </div>
-
-    <div class="section-title" id="math">Mathematics & Continuum</div>
-    <p class="section-lead">
-      Formal structure, spectral conditions, and the continuum limit behavior.
-    </p>
-
-    <div class="grid">
-      <section class="paper">
-        <h3>
-          <a href="https://zenodo.org/records/17924486" target="_blank" rel="noopener">
-            Spectral Stability and Continuum Limit of the Sobolev-Ozok Lattice (SOL) Model
-          </a>
-        </h3>
-        <p class="meta">DOI: 10.5281/zenodo.17924485 · Zenodo record URL: 17924486</p>
-
-        <div class="tagrow">
-          <span class="tag">Continuum limit</span>
-          <span class="tag">Spectral stability</span>
-          <span class="tag">Mathematical structure</span>
-        </div>
-
-        <div class="buttons">
-          <a class="btn" href="https://zenodo.org/records/17924486" target="_blank" rel="noopener">Open on Zenodo</a>
-        </div>
-      </section>
-
-      <section class="paper">
-        <h3>
-          <a href="https://zenodo.org/records/17606679" target="_blank" rel="noopener">
-            Quaternion Structure and Coherence Hierarchy in the Sobolev Ozok Lattice (SOL) Framework
-          </a>
-        </h3>
-        <p class="meta">DOI: 10.5281/zenodo.17606678 · Zenodo record: 17606679</p>
-
-        <div class="tagrow">
-          <span class="tag">Quaternions</span>
-          <span class="tag">Coherence hierarchy</span>
-          <span class="tag">Symmetry</span>
-        </div>
-
-        <div class="buttons">
-          <a class="btn" href="https://zenodo.org/records/17606679" target="_blank" rel="noopener">Open on Zenodo</a>
-        </div>
-      </section>
-    </div>
-
-    <div class="section-title" id="geometry">Geometry & Constants</div>
-    <p class="section-lead">
-      Emergent metric/geometry and first-principles derivations of key physical scales and couplings.
-    </p>
-
-    <div class="grid">
-      <section class="paper">
-        <h3>
-          <a href="https://zenodo.org/records/18447949" target="_blank" rel="noopener">
-            Emergence of the Planck Length from Wave Support Limits in the Sobolev–Ozok Lattice Framework
-          </a>
-        </h3>
-        <p class="meta">Zenodo record: 18447949</p>
-
-        <div class="tagrow">
-          <span class="tag">Planck scale</span>
-          <span class="tag">Wave support limits</span>
-          <span class="tag">ℓ<sub>p</sub> emergence</span>
-        </div>
-
-        <div class="buttons">
-          <a class="btn" href="https://zenodo.org/records/18447949" target="_blank" rel="noopener">Open on Zenodo</a>
-        </div>
-      </section>
-
-      <section class="paper">
-        <h3>
-          <a href="https://zenodo.org/records/18448209" target="_blank" rel="noopener">
-            Gravitational Coupling as Emergent Coherence Stiffness in the Sobolev–Ozok Lattice (SOL) Framework
-          </a>
-        </h3>
-        <p class="meta">Zenodo record: 18448209</p>
-
-        <div class="tagrow">
-          <span class="tag">Gravity</span>
-          <span class="tag">Coherence stiffness</span>
-          <span class="tag">Emergent coupling</span>
-        </div>
-
-        <div class="buttons">
-          <a class="btn" href="https://zenodo.org/records/18448209" target="_blank" rel="noopener">Open on Zenodo</a>
-        </div>
-      </section>
-
-      <section class="paper">
-        <h3>
-          <a href="https://zenodo.org/records/16883575" target="_blank" rel="noopener">
-            Recovering General Relativity from the Sobolev–Ozok Lattice (SOL): Curvature and Einstein Tensor as Emergent Coherence Geometry
-          </a>
-        </h3>
-        <p class="meta">DOI: 10.5281/zenodo.16883574 · Zenodo record: 16883575</p>
-
-        <div class="tagrow">
-          <span class="tag">General relativity</span>
-          <span class="tag">Emergent geometry</span>
-          <span class="tag">Curvature</span>
-        </div>
-
-        <div class="buttons">
-          <a class="btn" href="https://zenodo.org/records/16883575" target="_blank" rel="noopener">Open on Zenodo</a>
-        </div>
-      </section>
-    </div>
-
-    <div class="section-title" id="cosmology">Cosmology</div>
-    <p class="section-lead">
-      Space evolution, coherence invariants, cyclic/reset mechanisms, and age/horizon modeling from pre-geometric coherence.
-    </p>
-
-    <div class="grid">
-      <section class="paper">
-        <h3>
-          <a href="https://zenodo.org/records/17754278" target="_blank" rel="noopener">
-            The Sobolev-Ozok Lattice K-Cycle Law, Space Evolution, Coherence Invariants, and the Cosmological Reset Mechanism
-          </a>
-        </h3>
-        <p class="meta">DOI: 10.5281/zenodo.17754277 · Zenodo record: 17754278</p>
-
-        <div class="tagrow">
-          <span class="tag">Cosmology</span>
-          <span class="tag">K-cycle</span>
-          <span class="tag">Coherence invariants</span>
-        </div>
-
-        <div class="buttons">
-          <a class="btn" href="https://zenodo.org/records/17754278" target="_blank" rel="noopener">Open on Zenodo</a>
-        </div>
-      </section>
-
-      <section class="paper">
-        <h3>
-          <a href="https://zenodo.org/records/16890398" target="_blank" rel="noopener">
-            From Pre-Geometric Coherence to the Present Universe: Planck-Scale Step Count, Horizon, and Age in the Sobolev–Ozok–Lattice Framework
-          </a>
-        </h3>
-        <p class="meta">DOI: 10.5281/zenodo.16890397 · Zenodo record: 16890398</p>
-
-        <div class="tagrow">
-          <span class="tag">Universe age</span>
-          <span class="tag">Horizon</span>
-          <span class="tag">Planck step count</span>
-        </div>
-
-        <div class="buttons">
-          <a class="btn" href="https://zenodo.org/records/16890398" target="_blank" rel="noopener">Open on Zenodo</a>
-        </div>
-      </section>
-    </div>
-
-    <div class="section-title" id="astrophysics">Astrophysics</div>
-    <p class="section-lead">
-      SOL validations and signatures in galactic dynamics and black hole phenomena.
-    </p>
-
-    <div class="grid">
-      <section class="paper">
-        <h3>
-          <a href="https://zenodo.org/records/16884010" target="_blank" rel="noopener">
-            The Sobolev–Ozok Lattice (SOL) Model and the Baryonic Tully–Fisher Relation: A First-Principles Match Without Dark-Matter Tuning
-          </a>
-        </h3>
-        <p class="meta">DOI: 10.5281/zenodo.16884009 · Zenodo record: 16884010</p>
-
-        <div class="tagrow">
-          <span class="tag">BTFR</span>
-          <span class="tag">Galaxies</span>
-          <span class="tag">No DM tuning</span>
-        </div>
-
-        <div class="buttons">
-          <a class="btn" href="https://zenodo.org/records/16884010" target="_blank" rel="noopener">Open on Zenodo</a>
-        </div>
-      </section>
-
-      <section class="paper">
-        <h3>
-          <a href="https://zenodo.org/records/16889440" target="_blank" rel="noopener">
-            Black Holes from the Sobolev–Ozok Lattice (SOL): Derivation, Galaxy Occupation Thresholds, and Quasi-Black-Hole Signatures
-          </a>
-        </h3>
-        <p class="meta">DOI: 10.5281/zenodo.16889439 · Zenodo record: 16889440</p>
-
-        <div class="tagrow">
-          <span class="tag">Black holes</span>
-          <span class="tag">Thresholds</span>
-          <span class="tag">Signatures</span>
-        </div>
-
-        <div class="buttons">
-          <a class="btn" href="https://zenodo.org/records/16889440" target="_blank" rel="noopener">Open on Zenodo</a>
-        </div>
-      </section>
-
-      <section class="paper">
-        <h3>
-          <a href="https://zenodo.org/records/17443528" target="_blank" rel="noopener">
-            Possibility of Void Black Holes in the Sobolev–Ozok Lattice Framework
-          </a>
-        </h3>
-        <p class="meta">DOI: 10.5281/zenodo.17443527 · Zenodo record: 17443528</p>
-
-        <div class="tagrow">
-          <span class="tag">Black holes</span>
-          <span class="tag">Void structure</span>
-          <span class="tag">Cosmology</span>
-        </div>
-
-        <div class="buttons">
-          <a class="btn" href="https://zenodo.org/records/17443528" target="_blank" rel="noopener">Open on Zenodo</a>
-        </div>
-      </section>
-    </div>
-
-    <div class="section-title" id="particles">Particles & Mass Relations</div>
-    <p class="section-lead">
-      Lepton mass structure and coherence-shell geometry links.
-    </p>
-
-    <div class="grid">
-      <section class="paper">
-        <h3>
-          <a href="https://zenodo.org/records/18450337" target="_blank" rel="noopener">
-            Derivation of the Koide Relation from Coherence Shell Geometry in the Sobolev-Ozok Lattice (SOL) Framework
-          </a>
-        </h3>
-        <p class="meta">DOI: 10.5281/zenodo.18450337 · Zenodo record: 18450337</p>
-
-        <div class="tagrow">
-          <span class="tag">Koide</span>
-          <span class="tag">Leptons</span>
-          <span class="tag">Coherence shells</span>
-        </div>
-
-        <div class="buttons">
-          <a class="btn" href="https://zenodo.org/records/18450337" target="_blank" rel="noopener">Open on Zenodo</a>
-        </div>
-      </section>
-    </div>
+    <!-- Render target -->
+    <div id="papers-root"></div>
 
     <div class="footer">
       <div class="site-status">
@@ -600,5 +253,200 @@
     </div>
 
   </div>
+
+  <script>
+    // ============================
+    // 1) EDIT ONLY THIS LIST
+    // ============================
+    const PAPERS = [
+      // --- Foundations / Core ---
+      {
+        section: "Foundations & Core",
+        title: "The Sobolev–Ozok Lattice (SOL) Model: A Discrete Framework for Spacetime and Energy Dynamics",
+        record: "18447688",
+        doi: "10.5281/zenodo.18447688",
+        tags: ["Foundations", "Discrete spacetime", "Coherence dynamics"]
+      },
+      {
+        section: "Foundations & Core",
+        title: "Emergence of the Planck Length from Wave Support Limits in the Sobolev–Ozok Lattice Framework",
+        record: "18447949",
+        doi: "10.5281/zenodo.18447949",
+        tags: ["Planck scale", "Wave support limits", "ℓp emergence"]
+      },
+      {
+        section: "Foundations & Core",
+        title: "Gravitational Coupling as Emergent Coherence Stiffness in the Sobolev–Ozok Lattice (SOL) Framework",
+        record: "18448209",
+        doi: "10.5281/zenodo.18448209",
+        tags: ["Gravity", "Coherence stiffness", "Emergent coupling"]
+      },
+
+      // --- Math / Structure ---
+      {
+        section: "Mathematics & Structure",
+        title: "Spectral Stability and Continuum Limit of the Sobolev-Ozok Lattice (SOL) Model",
+        record: "17924486",
+        doi: "10.5281/zenodo.17924485",
+        tags: ["Continuum limit", "Spectral stability", "Mathematical structure"]
+      },
+      {
+        section: "Mathematics & Structure",
+        title: "Quaternion Structure and Coherence Hierarchy in the Sobolev Ozok Lattice (SOL) Framework",
+        record: "17606679",
+        doi: "10.5281/zenodo.17606678",
+        tags: ["Quaternions", "Coherence hierarchy", "Symmetry"]
+      },
+
+      // --- Cosmology ---
+      {
+        section: "Cosmology",
+        title: "The Sobolev-Ozok Lattice K-Cycle Law, Space Evolution, Coherence Invariants, and the Cosmological Reset Mechanism",
+        record: "17754278",
+        doi: "10.5281/zenodo.17754277",
+        tags: ["Cosmology", "K-cycle", "Coherence invariants"]
+      },
+      {
+        section: "Cosmology",
+        title: "From Pre-Geometric Coherence to the Present Universe: Planck-Scale Step Count, Horizon, and Age in the Sobolev–Ozok–Lattice Framework",
+        record: "16890398",
+        doi: "10.5281/zenodo.16890397",
+        tags: ["Universe age", "Horizon", "Planck step count"]
+      },
+
+      // --- Black Holes ---
+      {
+        section: "Black Holes",
+        title: "Black Holes from the Sobolev–Ozok Lattice (SOL): Derivation, Galaxy Occupation Thresholds, and Quasi-Black-Hole Signatures",
+        record: "16889440",
+        doi: "10.5281/zenodo.16889439",
+        tags: ["Black holes", "Thresholds", "Signatures"]
+      },
+      {
+        section: "Black Holes",
+        title: "Possibility of Void Black Holes in the Sobolev–Ozok Lattice Framework",
+        record: "17443528",
+        doi: "10.5281/zenodo.17443527",
+        tags: ["Black holes", "Void structure", "Cosmology"]
+      },
+
+      // --- Galaxies / Tests ---
+      {
+        section: "Galaxies & Tests",
+        title: "The Sobolev–Ozok Lattice (SOL) Model and the Baryonic Tully–Fisher Relation: A First-Principles Match Without Dark-Matter Tuning",
+        record: "16884010",
+        doi: "10.5281/zenodo.16884009",
+        tags: ["BTFR", "Galaxies", "No DM tuning"]
+      },
+
+      // --- GR / Emergent Geometry ---
+      {
+        section: "GR from SOL",
+        title: "Recovering General Relativity from the Sobolev–Ozok Lattice (SOL): Curvature and Einstein Tensor as Emergent Coherence Geometry",
+        record: "16883575",
+        doi: "10.5281/zenodo.16883574",
+        tags: ["General relativity", "Emergent geometry", "Curvature"]
+      },
+
+      // --- Particle / Koide ---
+      {
+        section: "Particle Structure",
+        title: "Derivation of the Koide Relation from Coherence Shell Geometry in the Sobolev-Ozok Lattice (SOL) Framework",
+        record: "18450337",
+        doi: "10.5281/zenodo.18450337",
+        tags: ["Koide", "Leptons", "Coherence shells"]
+      },
+    ];
+
+    // ============================
+    // 2) RENDER (no editing needed)
+    // ============================
+    const root = document.getElementById("papers-root");
+
+    // Group by section
+    const groups = new Map();
+    for (const p of PAPERS) {
+      const key = (p.section || "Other").trim();
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push(p);
+    }
+
+    // Stable section ordering (optional): define a preferred order
+    const preferredOrder = [
+      "Foundations & Core",
+      "Mathematics & Structure",
+      "GR from SOL",
+      "Galaxies & Tests",
+      "Black Holes",
+      "Cosmology",
+      "Particle Structure",
+      "Other"
+    ];
+
+    const orderedSections = [
+      ...preferredOrder.filter(s => groups.has(s)),
+      ...[...groups.keys()].filter(s => !preferredOrder.includes(s))
+    ];
+
+    function zenodoUrl(record) {
+      return `https://zenodo.org/records/${encodeURIComponent(record)}`;
+    }
+
+    function escapeHtml(str) {
+      return String(str)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function tagPills(tags) {
+      if (!tags || !tags.length) return "";
+      return `
+        <div class="tagrow">
+          ${tags.map(t => `<span class="tag">${escapeHtml(t)}</span>`).join("")}
+        </div>
+      `;
+    }
+
+    function paperCard(p) {
+      const url = zenodoUrl(p.record);
+      const metaParts = [];
+      if (p.doi) metaParts.push(`DOI: ${escapeHtml(p.doi)}`);
+      if (p.record) metaParts.push(`Zenodo record: ${escapeHtml(p.record)}`);
+      const meta = metaParts.join(" · ");
+
+      return `
+        <section class="paper">
+          <h3>
+            <a href="${url}" target="_blank" rel="noopener">${escapeHtml(p.title)}</a>
+          </h3>
+          <p class="meta">${meta}</p>
+          ${tagPills(p.tags)}
+          <div class="buttons">
+            <a class="btn" href="${url}" target="_blank" rel="noopener">Open on Zenodo</a>
+          </div>
+        </section>
+      `;
+    }
+
+    // Build DOM
+    const html = orderedSections.map(sectionName => {
+      const items = groups.get(sectionName) || [];
+      const cards = items.map(paperCard).join("");
+      return `
+        <div class="section-title">
+          <h2>${escapeHtml(sectionName)}</h2>
+          <span class="count">${items.length}</span>
+        </div>
+        <div class="grid">
+          ${cards}
+        </div>
+      `;
+    }).join("");
+
+    root.innerHTML = html;
+  </script>
 </body>
 </html>
