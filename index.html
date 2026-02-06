@@ -150,6 +150,26 @@
     ul{margin:10px 0 0 18px; color: rgba(255,255,255,0.84);}
     li{margin:6px 0}
     .footer{margin-top:24px; text-align:center; color:var(--muted); font-size:12.5px;}
+      .sol-figure{
+        margin: 20px auto;
+        max-width: 1100px;
+        padding: 14px;
+        border-radius: 16px;
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(255,255,255,0.10);
+      }
+      .sol-figure img{
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 12px;
+      }
+      .sol-figure figcaption{
+        margin-top: 10px;
+        font-size: 0.95rem;
+        opacity: 0.9;
+        line-height: 1.35;
+      }
 
     @media (max-width:620px){
       h1{font-size:30px}
@@ -215,6 +235,20 @@
           <li>Applications to solar system tests, galaxy rotation, and black hole phenomena.</li>
         </ul>
       </section>
+      <figure class="sol-figure">
+        <a href="/assets/img/SOL1.png" target="_blank" rel="noopener">
+          <img
+            src="/assets/img/SOL1.png"
+            alt="SOL metric visualization: k=1 scaling, k=2 curvature, k=3 shell/interface structure"
+            loading="lazy"
+            decoding="async"
+          />
+        </a>
+        <figcaption>
+          <strong>SOL Metric Orders (3D render):</strong>
+          k=1 conformal scaling, k=2 intrinsic curvature, k=3 curvature-gradient shells/interfaces.
+        </figcaption>
+      </figure>
 
       <section class="card" id="predictions">
         <h2>Predictions & Falsifiability</h2>
