@@ -2,124 +2,190 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>SOL — Research Philosophy</title>
+  <title>Research Philosophy — Sobolev-Ozok Lattice (SOL)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <meta property="og:title" content="Research Philosophy — Sobolev–Ozok Lattice (SOL)" />
+  <meta property="og:description" content="A short research ethos statement for the SOL program: explore profoundly without needing ultimate certainty or consensus." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ozokozcasol.github.io/Sobolev-Ozok-Lattice/philosophy.html" />
+  <meta property="og:image" content="https://ozokozcasol.github.io/Sobolev-Ozok-Lattice/figures/og-sol.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
   <style>
-    :root {
-      --bg: #0b0f14;
-      --text: #e6e6e6;
-      --muted: #a0a0a0;
-      --accent: #7aa2f7;
+    :root{
+      --bg:#0b0f14;
+      --text: rgba(255,255,255,0.92);
+      --muted: rgba(255,255,255,0.70);
+      --faint: rgba(255,255,255,0.12);
+      --grad: linear-gradient(90deg, #42f59b 0%, #f2e85e 35%, #ff9d5c 60%, #b08cff 100%);
     }
-
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont,
-                   "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background-color: var(--bg);
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color: var(--text);
-      line-height: 1.6;
+      background:
+        radial-gradient(1200px 600px at 20% 0%, rgba(66,245,155,0.10), transparent 60%),
+        radial-gradient(1000px 500px at 80% 10%, rgba(176,140,255,0.10), transparent 55%),
+        radial-gradient(900px 500px at 50% 100%, rgba(255,157,92,0.08), transparent 60%),
+        var(--bg);
+      line-height:1.6;
+    }
+    a{color:var(--text); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:980px; margin:0 auto; padding:28px 18px 70px;}
+
+    .topbar{
+      display:flex; justify-content:space-between; align-items:center; gap:12px;
+      padding:14px 16px;
+      border-radius:14px;
+      border:1px solid var(--faint);
+      background: rgba(255,255,255,0.04);
+      backdrop-filter: blur(10px);
+    }
+    .brand{display:flex; align-items:center; gap:12px;}
+    .sig{width:34px; height:34px; border-radius:10px; background:var(--grad); border:1px solid rgba(255,255,255,0.18);}
+    .brand b{font-size:14px}
+    .brand small{display:block; color:var(--muted); font-size:12px; margin-top:2px}
+    nav{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
+    .navlink{
+      padding:9px 12px; border-radius:12px;
+      border:1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.03);
+      font-size:13px; color:rgba(255,255,255,0.88);
+    }
+    /* Optional: highlight current page */
+    .navlink.active{
+      border-color: rgba(255,255,255,0.22);
+      background: rgba(255,255,255,0.07);
     }
 
-    .container {
-      max-width: 820px;
-      margin: 0 auto;
-      padding: 3rem 1.5rem;
+    .hero{
+      margin-top:18px;
+      padding:22px 18px;
+      border-radius:18px;
+      border:1px solid var(--faint);
+      background: rgba(255,255,255,0.04);
     }
+    h1{margin:0 0 10px; font-size:40px; letter-spacing:-0.6px; line-height:1.15;}
+    p{margin:0}
+    .muted{color:var(--muted)}
 
-    h1 {
-      font-size: 2.2rem;
-      margin-bottom: 0.5rem;
+    .grid{display:grid; grid-template-columns:1fr; gap:14px; margin-top:14px;}
+    .card{
+      padding:18px;
+      border-radius:18px;
+      border:1px solid var(--faint);
+      background: rgba(255,255,255,0.04);
     }
+    .card h2{margin:0 0 8px; font-size:18px}
 
-    h2 {
-      font-size: 1.4rem;
-      margin-top: 3rem;
-      margin-bottom: 1rem;
-      color: var(--accent);
+    .quote{
+      margin-top:12px;
+      padding:14px 16px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,0.12);
+      background: rgba(0,0,0,0.22);
     }
-
-    p {
-      font-size: 1rem;
-      margin-bottom: 1.2rem;
-    }
-
-    .manifesto {
+    .quote p{
+      margin:0;
       font-style: italic;
-      font-size: 1.05rem;
-      color: var(--muted);
-      border-left: 3px solid var(--accent);
-      padding-left: 1rem;
-      margin: 1.5rem 0 2rem 0;
+      color: rgba(255,255,255,0.86);
     }
 
-    footer {
-      margin-top: 4rem;
+    .footer{margin-top:24px; text-align:center; color:var(--muted); font-size:12.5px;}
+    .site-status {
       font-size: 0.85rem;
-      color: var(--muted);
-      border-top: 1px solid #222;
-      padding-top: 1rem;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 0.35rem;
     }
 
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
+    @media (max-width:620px){
+      h1{font-size:30px}
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
+  <div class="wrap">
 
-    <h1>Sobolev–Ozok Lattice (SOL)</h1>
-    <p>
-      An exploratory framework for coherence, resolution, and emergent structure
-      in fundamental physics.
-    </p>
+    <div class="topbar">
+      <div class="brand">
+        <div class="sig" aria-hidden="true"></div>
+        <div>
+          <b>Sobolev-Ozok Lattice (SOL)</b>
+          <small>Planck-cell coherence → emergent geometry</small>
+        </div>
+      </div>
+      <nav>
+        <a class="navlink" href="index.html">Home</a>
+        <a class="navlink" href="papers.html">Papers</a>
+        <a class="navlink" href="predictions.html">Predictions</a>
+        <a class="navlink active" href="philosophy.html">Research Philosophy</a>
+        <a class="navlink" href="https://github.com/ozokozcaSOL/Sobolev-Ozok-Lattice" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </div>
 
-    <section id="research-philosophy">
-      <h2>Research Philosophy</h2>
-
-      <p class="manifesto">
-        I am allowed to explore a profound idea without needing it to be ultimate,
-        accepted, or correct.
+    <section class="hero">
+      <h1>Research Philosophy</h1>
+      <p class="muted">
+        A short statement of intent and method behind the SOL research program.
       </p>
 
-      <p>
-        This work approaches theoretical physics as an exploratory process rather
-        than a search for final answers. Its aim is to investigate whether familiar
-        physical laws, probabilities, and observational outcomes may arise from
-        deeper structural constraints on what configurations of the universe can
-        persist.
-      </p>
-
-      <p>
-        Uncertainty is treated not as a weakness, but as an essential component of
-        honest inquiry. Historically, progress in physics has often begun with
-        tentative frameworks that clarified the space of possible explanations
-        long before experimental or communal consensus emerged.
-      </p>
-
-      <p>
-        The models presented here are not assertions of ultimate truth. They are
-        proposals intended to be examined, challenged, refined, or discarded as
-        understanding advances.
-      </p>
+      <div class="quote" role="note" aria-label="Research ethos">
+        <p>
+          I am allowed to explore a profound idea without needing it to be ultimate,
+          accepted, or correct.
+        </p>
+      </div>
     </section>
-    <div class="footer">
-  <div class="site-status">
-    Status: Active theoretical research program. Manuscripts archived on Zenodo and under continued development.
-  </div>
 
-  Maintained by Ozcan Ozok · 
-  <a href="papers.html">Papers</a> · 
-  <a href="https://github.com/ozokozcaSOL/Sobolev-Ozok-Lattice" target="_blank" rel="noopener">Repository</a> ·
-  <a href="https://orcid.org/0009-0001-7901-2455" target="_blank" rel="noopener">ORCID</a>
+    <div class="grid">
+      <section class="card">
+        <h2>Approach</h2>
+        <p class="muted">
+          I treat theoretical frameworks as exploratory models whose value lies in explanatory coherence,
+          internal consistency, and the ability to generate testable questions—rather than immediate consensus.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Scope</h2>
+        <p class="muted">
+          SOL is developed as a structural hypothesis: familiar laws, probabilities, and observational outcomes may
+          emerge from deeper constraints on which configurations can persist under resolution dynamics.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Uncertainty</h2>
+        <p class="muted">
+          Uncertainty is not a weakness. It is the boundary condition of honest inquiry. A model can be valuable
+          before it is proven, because it can sharpen questions, reveal hidden assumptions, and suggest new tests.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Scientific posture</h2>
+        <p class="muted">
+          Nothing here is presented as final. The goal is to build something coherent enough to be challenged,
+          refined, or discarded as evidence and understanding evolve.
+        </p>
+      </section>
+    </div>
+
+    <div class="footer">
+      <div class="site-status">
+        Status: Active theoretical research program. Manuscripts archived on Zenodo and under continued development.
+      </div>
+
+      Maintained by Ozcan Ozok ·
+      <a href="papers.html">Papers</a> ·
+      <a href="https://github.com/ozokozcaSOL/Sobolev-Ozok-Lattice" target="_blank" rel="noopener">Repository</a> ·
+      <a href="https://orcid.org/0009-0001-7901-2455" target="_blank" rel="noopener">ORCID</a>
+    </div>
+
   </div>
 </body>
 </html>
