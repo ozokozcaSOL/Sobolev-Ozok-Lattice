@@ -2,20 +2,20 @@
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-248KV7QEKR"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-248KV7QEKR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-248KV7QEKR');
+  </script>
 
-  gtag('config', 'G-248KV7QEKR');
-</script>
   <meta charset="UTF-8" />
-  <title>Research Philosophy — Sobolev-Ozok Lattice (SOL)</title>
+  <title>Research Philosophy — Sobolev–Ozok Lattice (SOL)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <meta property="og:title" content="Research Philosophy — Sobolev–Ozok Lattice (SOL)" />
-  <meta property="og:description" content="A short research ethos statement for the SOL program: explore profoundly without needing ultimate certainty or consensus." />
+  <meta property="og:description" content="The research philosophy behind the SOL program: structural inquiry, intellectual independence, engineering rigor, and philosophical openness to deep physical foundations." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://ozokozcasol.github.io/Sobolev-Ozok-Lattice/philosophy.html" />
   <meta property="og:image" content="https://ozokozcasol.github.io/Sobolev-Ozok-Lattice/figures/og-sol.png" />
@@ -24,94 +24,297 @@
   <style>
     :root{
       --bg:#0b0f14;
-      --text: rgba(255,255,255,0.92);
-      --muted: rgba(255,255,255,0.70);
-      --faint: rgba(255,255,255,0.12);
-      --grad: linear-gradient(90deg, #42f59b 0%, #f2e85e 35%, #ff9d5c 60%, #b08cff 100%);
+      --text:rgba(255,255,255,0.93);
+      --muted:rgba(255,255,255,0.72);
+      --faint:rgba(255,255,255,0.12);
+      --card:rgba(255,255,255,0.04);
+      --card-strong:rgba(255,255,255,0.06);
+      --grad:linear-gradient(90deg,#42f59b 0%,#f2e85e 35%,#ff9d5c 60%,#b08cff 100%);
+      --shadow:0 10px 30px rgba(0,0,0,0.22);
     }
+
     *{box-sizing:border-box}
+
+    html{
+      scroll-behavior:smooth;
+    }
+
     body{
       margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color: var(--text);
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text);
       background:
         radial-gradient(1200px 600px at 20% 0%, rgba(66,245,155,0.10), transparent 60%),
         radial-gradient(1000px 500px at 80% 10%, rgba(176,140,255,0.10), transparent 55%),
         radial-gradient(900px 500px at 50% 100%, rgba(255,157,92,0.08), transparent 60%),
         var(--bg);
-      line-height:1.6;
+      line-height:1.65;
     }
-    a{color:var(--text); text-decoration:none}
-    a:hover{text-decoration:underline}
-    .wrap{max-width:980px; margin:0 auto; padding:28px 18px 70px;}
+
+    a{
+      color:var(--text);
+      text-decoration:none;
+    }
+
+    a:hover{
+      text-decoration:underline;
+    }
+
+    .wrap{
+      max-width:1100px;
+      margin:0 auto;
+      padding:28px 18px 72px;
+    }
 
     .topbar{
-      display:flex; justify-content:space-between; align-items:center; gap:12px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
       padding:14px 16px;
-      border-radius:14px;
+      border-radius:16px;
       border:1px solid var(--faint);
-      background: rgba(255,255,255,0.04);
-      backdrop-filter: blur(10px);
+      background:var(--card);
+      backdrop-filter:blur(10px);
+      box-shadow:var(--shadow);
+      position:sticky;
+      top:14px;
+      z-index:30;
     }
-    .brand{display:flex; align-items:center; gap:12px;}
-    .sig{width:34px; height:34px; border-radius:10px; background:var(--grad); border:1px solid rgba(255,255,255,0.18);}
-    .brand b{font-size:14px}
-    .brand small{display:block; color:var(--muted); font-size:12px; margin-top:2px}
-    nav{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .sig{
+      width:36px;
+      height:36px;
+      border-radius:10px;
+      background:var(--grad);
+      border:1px solid rgba(255,255,255,0.18);
+      flex:0 0 auto;
+    }
+
+    .brand b{
+      font-size:14px;
+    }
+
+    .brand small{
+      display:block;
+      color:var(--muted);
+      font-size:12px;
+      margin-top:2px;
+    }
+
+    nav{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
     .navlink{
-      padding:9px 12px; border-radius:12px;
+      padding:9px 12px;
+      border-radius:12px;
       border:1px solid rgba(255,255,255,0.12);
-      background: rgba(255,255,255,0.03);
-      font-size:13px; color:rgba(255,255,255,0.88);
+      background:rgba(255,255,255,0.03);
+      font-size:13px;
+      color:rgba(255,255,255,0.88);
+      transition:all 0.2s ease;
     }
-    /* Optional: highlight current page */
+
+    .navlink:hover{
+      text-decoration:none;
+      background:rgba(255,255,255,0.07);
+      transform:translateY(-1px);
+    }
+
     .navlink.active{
-      border-color: rgba(255,255,255,0.22);
-      background: rgba(255,255,255,0.07);
+      border-color:rgba(255,255,255,0.22);
+      background:rgba(255,255,255,0.08);
     }
 
     .hero{
       margin-top:18px;
-      padding:22px 18px;
-      border-radius:18px;
+      padding:30px 24px;
+      border-radius:22px;
       border:1px solid var(--faint);
-      background: rgba(255,255,255,0.04);
+      background:linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
     }
-    h1{margin:0 0 10px; font-size:40px; letter-spacing:-0.6px; line-height:1.15;}
-    p{margin:0}
-    .muted{color:var(--muted)}
 
-    .grid{display:grid; grid-template-columns:1fr; gap:14px; margin-top:14px;}
-    .card{
-      padding:18px;
-      border-radius:18px;
-      border:1px solid var(--faint);
-      background: rgba(255,255,255,0.04);
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background:var(--grad);
+      opacity:0.10;
+      filter:blur(34px);
+      z-index:0;
     }
-    .card h2{margin:0 0 8px; font-size:18px}
+
+    .hero > *{
+      position:relative;
+      z-index:1;
+    }
+
+    .eyebrow{
+      display:inline-block;
+      margin-bottom:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,0.14);
+      background:rgba(255,255,255,0.04);
+      color:var(--muted);
+      font-size:12px;
+      letter-spacing:0.2px;
+    }
+
+    h1{
+      margin:0 0 12px;
+      font-size:42px;
+      line-height:1.08;
+      letter-spacing:-0.8px;
+    }
+
+    .lead{
+      margin:0;
+      color:var(--muted);
+      max-width:900px;
+      font-size:16px;
+    }
+
+    .lead + .lead{
+      margin-top:10px;
+    }
 
     .quote{
-      margin-top:12px;
-      padding:14px 16px;
-      border-radius:16px;
+      margin-top:18px;
+      padding:18px 18px;
+      border-radius:18px;
       border:1px solid rgba(255,255,255,0.12);
-      background: rgba(0,0,0,0.22);
-    }
-    .quote p{
-      margin:0;
-      font-style: italic;
-      color: rgba(255,255,255,0.86);
+      background:rgba(0,0,0,0.22);
+      box-shadow:var(--shadow);
     }
 
-    .footer{margin-top:24px; text-align:center; color:var(--muted); font-size:12.5px;}
-    .site-status {
-      font-size: 0.85rem;
-      color: rgba(255, 255, 255, 0.6);
-      margin-bottom: 0.35rem;
+    .quote p{
+      margin:0;
+      font-style:italic;
+      font-size:18px;
+      line-height:1.7;
+      color:rgba(255,255,255,0.90);
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:14px;
+      margin-top:16px;
+    }
+
+    .card{
+      padding:20px;
+      border-radius:18px;
+      border:1px solid var(--faint);
+      background:var(--card);
+      box-shadow:var(--shadow);
+    }
+
+    .card h2{
+      margin:0 0 10px;
+      font-size:20px;
+      letter-spacing:-0.2px;
+    }
+
+    .card p{
+      margin:0;
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    .card p + p{
+      margin-top:10px;
+    }
+
+    .card ul{
+      margin:12px 0 0 18px;
+      padding:0;
+      color:rgba(255,255,255,0.88);
+    }
+
+    .card li{
+      margin:7px 0;
+    }
+
+    .closing{
+      margin-top:16px;
+      padding:22px 18px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,0.12);
+      background:rgba(255,255,255,0.04);
+      box-shadow:var(--shadow);
+      text-align:center;
+    }
+
+    .closing p{
+      margin:0 auto;
+      max-width:760px;
+      font-size:18px;
+      line-height:1.75;
+      color:rgba(255,255,255,0.92);
+    }
+
+    .footer{
+      margin-top:24px;
+      text-align:center;
+      color:var(--muted);
+      font-size:12.5px;
+      padding-bottom:10px;
+    }
+
+    .site-status{
+      font-size:0.85rem;
+      color:rgba(255,255,255,0.6);
+      margin-bottom:0.35rem;
+    }
+
+    @media (max-width:920px){
+      .grid{
+        grid-template-columns:1fr;
+      }
+
+      h1{
+        font-size:34px;
+      }
     }
 
     @media (max-width:620px){
-      h1{font-size:30px}
+      .topbar{
+        position:static;
+      }
+
+      .wrap{
+        padding:18px 14px 56px;
+      }
+
+      .hero,
+      .card,
+      .closing{
+        padding:18px 16px;
+      }
+
+      h1{
+        font-size:30px;
+      }
+
+      .quote p,
+      .closing p{
+        font-size:17px;
+      }
     }
   </style>
 </head>
@@ -123,10 +326,11 @@
       <div class="brand">
         <div class="sig" aria-hidden="true"></div>
         <div>
-          <b>Sobolev-Ozok Lattice (SOL)</b>
-          <small>Planck-cell coherence → emergent geometry</small>
+          <b>Sobolev–Ozok Lattice (SOL)</b>
+          <small>Research philosophy and intellectual posture</small>
         </div>
       </div>
+
       <nav>
         <a class="navlink" href="index.html">Home</a>
         <a class="navlink" href="papers.html">Papers</a>
@@ -137,52 +341,94 @@
     </div>
 
     <section class="hero">
+      <div class="eyebrow">Intent, method, and intellectual stance</div>
       <h1>Research Philosophy</h1>
-      <p class="muted">
-        A short statement of intent and method behind the SOL research program.
+
+      <p class="lead">
+        The SOL program is not only a technical framework. It is also an attempt to approach fundamental questions with structural rigor, philosophical openness, and intellectual independence.
+      </p>
+
+      <p class="lead">
+        This page explains the posture behind the work: why it exists, how it is approached, and what kind of scientific attitude shapes its development.
       </p>
 
       <div class="quote" role="note" aria-label="Research ethos">
         <p>
-          I am allowed to explore a profound idea without needing it to be ultimate,
-          accepted, or correct.
+          I explore ideas to understand them — not to immediately prove them, validate them, or have them accepted.
         </p>
       </div>
     </section>
 
     <div class="grid">
       <section class="card">
+        <h2>Why this work exists</h2>
+        <p>
+          The motivation behind SOL is not to introduce novelty for its own sake, but to ask whether the structures usually treated as fundamental — spacetime, gravity, probability, and physical law — may themselves arise from something deeper.
+        </p>
+        <p>
+          If a more basic organizing logic exists, then a serious framework should try to generate familiar structures from internal principles rather than merely assume them at the start.
+        </p>
+      </section>
+
+      <section class="card">
         <h2>Approach</h2>
-        <p class="muted">
-          I treat theoretical frameworks as exploratory models whose value lies in explanatory coherence,
-          internal consistency, and the ability to generate testable questions rather than immediate consensus.
+        <p>
+          I treat theoretical work as a process of structural discovery. A model is not valuable only when it is complete; it is valuable when it is coherent enough to reveal connections, expose assumptions, and produce questions that can be sharpened into tests.
+        </p>
+        <ul>
+          <li>internal consistency before rhetorical ambition</li>
+          <li>explanatory coherence over decorative complexity</li>
+          <li>mechanism over description</li>
+          <li>testable consequences over vague metaphors</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Engineering mindset in theory</h2>
+        <p>
+          My background is shaped by engineering, systems thinking, and real-world constraints. That influences how I think about foundations.
+        </p>
+        <p>
+          I naturally look for structure that works from the inside: interacting parts, causal logic, stability conditions, and mechanisms that generate outcomes rather than merely restating them. This is why SOL is built as a system, not as a collection of disconnected claims.
         </p>
       </section>
 
       <section class="card">
-        <h2>Scope</h2>
-        <p class="muted">
-          SOL is developed as a structural hypothesis: familiar laws, probabilities, and observational outcomes may
-          emerge from deeper constraints on which configurations can persist under resolution dynamics.
+        <h2>On uncertainty</h2>
+        <p>
+          Uncertainty is not a weakness in foundational work. It is the honest boundary condition of inquiry.
+        </p>
+        <p>
+          A framework may be incomplete and still be meaningful. Its role can be to sharpen the right questions, identify hidden assumptions, and point toward tests that would otherwise remain invisible.
         </p>
       </section>
 
       <section class="card">
-        <h2>Uncertainty</h2>
-        <p class="muted">
-          Uncertainty is not a weakness. It is the boundary condition of honest inquiry. A model can be valuable
-          before it is proven, because it can sharpen questions, reveal hidden assumptions, and suggest new tests.
+        <h2>Independence</h2>
+        <p>
+          This work has been developed outside traditional academic structures. That creates challenges, but it also creates freedom: freedom to think across boundaries, freedom to follow a line of reasoning without institutional fashion, and freedom to revise ideas without protecting a school of thought.
+        </p>
+        <p>
+          The responsibility that comes with this freedom is to be more critical, not less. Independence is useful only if it is matched by discipline.
         </p>
       </section>
 
       <section class="card">
         <h2>Scientific posture</h2>
-        <p class="muted">
-          Nothing here is presented as final. The goal is to build something coherent enough to be challenged,
-          refined, or discarded as evidence and understanding evolve.
+        <p>
+          Nothing in SOL is presented as untouchable or final. The goal is to build a framework that is structured enough to be challenged, clear enough to be understood, and rigorous enough to fail honestly if reality does not support it.
+        </p>
+        <p>
+          If it survives, it evolves. If it fails, it still contributes by showing more clearly where the path was wrong.
         </p>
       </section>
     </div>
+
+    <section class="closing">
+      <p>
+        This work is an attempt to understand structure, not to claim ownership of truth.
+      </p>
+    </section>
 
     <div class="footer">
       <div class="site-status">
@@ -191,6 +437,7 @@
 
       Maintained by Ozcan Ozok ·
       <a href="papers.html">Papers</a> ·
+      <a href="predictions.html">Predictions</a> ·
       <a href="https://github.com/ozokozcaSOL/Sobolev-Ozok-Lattice" target="_blank" rel="noopener">Repository</a> ·
       <a href="https://orcid.org/0009-0001-7901-2455" target="_blank" rel="noopener">ORCID</a>
     </div>
