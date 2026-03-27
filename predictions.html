@@ -2,20 +2,59 @@
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-248KV7QEKR"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-248KV7QEKR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-248KV7QEKR');
+  </script>
 
-  gtag('config', 'G-248KV7QEKR');
-</script>
-  <meta property="og:title" content="Sobolev–Ozok Lattice (SOL)" />
-  <meta property="og:description" content="A discrete coherence framework for spacetime and emergent physics. Papers, predictions, and reproducible code." />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://ozokozcasol.github.io/Sobolev-Ozok-Lattice/predictions.html#page",
+        "url": "https://ozokozcasol.github.io/Sobolev-Ozok-Lattice/predictions.html",
+        "name": "SOL — Predictions",
+        "description": "A structured map of falsifiable predictions from the Sobolev–Ozok Lattice (SOL) framework across cosmology, galaxies, black holes, and mathematical continuum behavior.",
+        "isPartOf": {
+          "@id": "https://ozokozcasol.github.io/Sobolev-Ozok-Lattice/#website"
+        },
+        "about": {
+          "@id": "https://ozokozcasol.github.io/Sobolev-Ozok-Lattice/#project"
+        }
+      },
+      {
+        "@type": "ResearchProject",
+        "@id": "https://ozokozcasol.github.io/Sobolev-Ozok-Lattice/#project",
+        "name": "Sobolev–Ozok Lattice (SOL)",
+        "url": "https://ozokozcasol.github.io/Sobolev-Ozok-Lattice/",
+        "description": "An active theoretical research program developing a discrete Planck-cell lattice model in which coherence and resolution dynamics generate emergent geometry, cosmology, and particle-scale structure.",
+        "founder": {
+          "@id": "https://ozokozcasol.github.io/Sobolev-Ozok-Lattice/#person"
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://ozokozcasol.github.io/Sobolev-Ozok-Lattice/#person",
+        "name": "Ozcan Ozok",
+        "url": "https://ozokozcasol.github.io/Sobolev-Ozok-Lattice/"
+      }
+    ]
+  }
+  </script>
+
+  <meta property="og:title" content="SOL — Predictions" />
+  <meta property="og:description" content="A guided map of falsifiable predictions from the Sobolev–Ozok Lattice (SOL) framework across cosmology, galaxies, black holes, and continuum behavior." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://ozokozcasol.github.io/Sobolev-Ozok-Lattice/philosophy.html" />
-  <meta property="og:url" content="https://ozokozcasol.github.io/Sobolev-Ozok-Lattice/" />
-  <meta property="og:image" content="https://ozokozcasol.github.io/Sobolev-Ozok-Lattice/figures/figure1.png" />
+  <meta property="og:url" content="https://ozokozcasol.github.io/Sobolev-Ozok-Lattice/predictions.html" />
+  <meta property="og:image" content="https://ozokozcasol.github.io/Sobolev-Ozok-Lattice/figures/figure1-sol-lattice.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
   <meta name="twitter:card" content="summary_large_image" />
   <meta charset="UTF-8" />
   <title>SOL — Predictions</title>
@@ -24,31 +63,47 @@
   <style>
     :root{
       --bg:#0b0f14;
-      --text: rgba(255,255,255,0.92);
-      --muted: rgba(255,255,255,0.70);
-      --faint: rgba(255,255,255,0.12);
-      --panel: rgba(255,255,255,0.04);
-      --grad: linear-gradient(90deg, #42f59b 0%, #f2e85e 35%, #ff9d5c 60%, #b08cff 100%);
-      --shadow: 0 12px 40px rgba(0,0,0,0.45);
+      --text:rgba(255,255,255,0.93);
+      --muted:rgba(255,255,255,0.72);
+      --faint:rgba(255,255,255,0.12);
+      --card:rgba(255,255,255,0.04);
+      --card-strong:rgba(255,255,255,0.06);
+      --grad:linear-gradient(90deg,#42f59b 0%,#f2e85e 35%,#ff9d5c 60%,#b08cff 100%);
+      --shadow:0 10px 30px rgba(0,0,0,0.22);
     }
 
     *{ box-sizing:border-box; }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
     body{
       margin:0;
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-      color: var(--text);
+      font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+      color:var(--text);
       background:
         radial-gradient(1200px 600px at 20% 0%, rgba(66,245,155,0.10), transparent 60%),
         radial-gradient(1000px 500px at 80% 10%, rgba(176,140,255,0.10), transparent 55%),
         radial-gradient(900px 500px at 50% 100%, rgba(255,157,92,0.08), transparent 60%),
         var(--bg);
-      line-height:1.6;
+      line-height:1.65;
     }
 
-    a{ color: var(--text); text-decoration:none; }
-    a:hover{ text-decoration:underline; }
+    a{
+      color:var(--text);
+      text-decoration:none;
+    }
 
-    .wrap{ max-width: 980px; margin: 0 auto; padding: 28px 18px 70px; }
+    a:hover{
+      text-decoration:underline;
+    }
+
+    .wrap{
+      max-width:1100px;
+      margin:0 auto;
+      padding:28px 18px 72px;
+    }
 
     .topbar{
       display:flex;
@@ -56,142 +111,354 @@
       align-items:center;
       gap:12px;
       padding:14px 16px;
-      border-radius:14px;
+      border-radius:16px;
       border:1px solid var(--faint);
-      background: rgba(255,255,255,0.04);
-      backdrop-filter: blur(10px);
-      box-shadow: var(--shadow);
-      position: sticky;
-      top: 14px;
-      z-index: 30;
+      background:var(--card);
+      backdrop-filter:blur(10px);
+      box-shadow:var(--shadow);
+      position:sticky;
+      top:14px;
+      z-index:30;
     }
 
-    .brand{ display:flex; align-items:center; gap:12px; }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
     .sig{
-      width:34px; height:34px;
+      width:36px;
+      height:36px;
       border-radius:10px;
-      background: var(--grad);
-      border: 1px solid rgba(255,255,255,0.18);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+      background:var(--grad);
+      border:1px solid rgba(255,255,255,0.18);
+      flex:0 0 auto;
     }
-    .brand b{ font-size:14px; }
-    .brand small{ display:block; color:var(--muted); font-size:12px; margin-top:2px; }
 
-    nav{ display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end; }
+    .brand b{
+      font-size:14px;
+    }
+
+    .brand small{
+      display:block;
+      color:var(--muted);
+      font-size:12px;
+      margin-top:2px;
+    }
+
+    nav{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
     .navlink{
       padding:9px 12px;
       border-radius:12px;
       border:1px solid rgba(255,255,255,0.12);
-      background: rgba(255,255,255,0.03);
+      background:rgba(255,255,255,0.03);
       font-size:13px;
-      color: rgba(255,255,255,0.88);
+      color:rgba(255,255,255,0.88);
+      transition:all 0.2s ease;
     }
-    .navlink:hover{ text-decoration:none; background: rgba(255,255,255,0.06); }
+
+    .navlink:hover{
+      text-decoration:none;
+      background:rgba(255,255,255,0.07);
+      transform:translateY(-1px);
+    }
+
+    .navlink.active{
+      background:rgba(255,255,255,0.09);
+      border-color:rgba(255,255,255,0.22);
+    }
 
     .hero{
-      margin-top: 18px;
-      padding: 22px 18px;
-      border-radius: 18px;
-      border: 1px solid var(--faint);
-      background: var(--panel);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-      position: relative;
-      overflow: hidden;
+      margin-top:18px;
+      padding:30px 24px;
+      border-radius:22px;
+      border:1px solid var(--faint);
+      background:linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
     }
-    .hero:before{
+
+    .hero::before{
       content:"";
       position:absolute;
       inset:-2px;
-      background: var(--grad);
-      opacity: 0.12;
-      filter: blur(30px);
+      background:var(--grad);
+      opacity:0.10;
+      filter:blur(34px);
       z-index:0;
     }
-    .hero > *{ position:relative; z-index:1; }
 
-    h1{ margin:0 0 8px; font-size: 34px; letter-spacing:-0.5px; line-height:1.15; }
-    .lead{ margin:0; color: var(--muted); max-width: 90ch; }
-
-    .toc{
-      margin-top: 14px;
-      padding: 14px;
-      border-radius: 16px;
-      border: 1px solid var(--faint);
-      background: rgba(255,255,255,0.03);
+    .hero > *{
+      position:relative;
+      z-index:1;
     }
-    .toc b{ display:block; margin-bottom:8px; }
-    .toc a{
+
+    .eyebrow{
       display:inline-block;
-      margin: 6px 10px 0 0;
-      padding: 8px 10px;
-      border-radius: 12px;
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(0,0,0,0.14);
-      font-size: 13px;
-      color: rgba(255,255,255,0.88);
-    }
-    .toc a:hover{ text-decoration:none; background: rgba(255,255,255,0.06); }
-
-    .section{
-      margin-top: 14px;
-      padding: 18px;
-      border-radius: 18px;
-      border: 1px solid var(--faint);
-      background: rgba(255,255,255,0.04);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.22);
+      margin-bottom:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,0.14);
+      background:rgba(255,255,255,0.04);
+      color:var(--muted);
+      font-size:12px;
+      letter-spacing:0.2px;
     }
 
-    .section h2{
-      margin:0 0 6px;
-      font-size: 18px;
-      letter-spacing: 0.1px;
+    h1{
+      margin:0 0 12px;
+      font-size:42px;
+      line-height:1.08;
+      letter-spacing:-0.8px;
     }
 
-    .meta{ margin: 0 0 12px; font-size: 13px; color: var(--muted); }
-
-    .pred{
-      margin: 10px 0 0;
-      padding: 12px 12px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(0,0,0,0.16);
+    .lead{
+      margin:0;
+      color:var(--muted);
+      max-width:900px;
+      font-size:16px;
     }
-    .pred b{ display:block; margin-bottom:6px; }
-    .pred ul{ margin: 0; padding-left: 18px; color: rgba(255,255,255,0.86); }
-    .pred li{ margin: 6px 0; color: rgba(255,255,255,0.86); }
+
+    .lead + .lead{
+      margin-top:10px;
+    }
+
+    .hero-points{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:12px;
+      margin-top:22px;
+    }
+
+    .hero-point{
+      padding:14px;
+      border:1px solid rgba(255,255,255,0.10);
+      border-radius:16px;
+      background:rgba(255,255,255,0.03);
+    }
+
+    .hero-point b{
+      display:block;
+      margin-bottom:5px;
+      font-size:14px;
+    }
+
+    .hero-point span{
+      color:var(--muted);
+      font-size:14px;
+    }
 
     .buttons{
       display:flex;
       gap:10px;
       flex-wrap:wrap;
-      margin-top: 10px;
+      margin-top:16px;
     }
+
     .btn{
-      display:inline-block;
-      padding: 9px 12px;
-      border-radius: 12px;
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(0,0,0,0.18);
-      font-size: 13px;
-      color: rgba(255,255,255,0.88);
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      min-height:44px;
+      padding:10px 14px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,0.12);
+      background:rgba(0,0,0,0.18);
+      font-size:13px;
+      color:rgba(255,255,255,0.90);
+      transition:all 0.2s ease;
     }
-    .btn:hover{ background: rgba(255,255,255,0.06); text-decoration:none; }
+
+    .btn:hover{
+      background:rgba(255,255,255,0.07);
+      text-decoration:none;
+      transform:translateY(-1px);
+    }
+
+    .btn-primary{
+      background:var(--grad);
+      color:#091018;
+      border:none;
+      font-weight:700;
+    }
+
+    .toc{
+      margin-top:16px;
+      padding:16px;
+      border-radius:16px;
+      border:1px solid var(--faint);
+      background:rgba(255,255,255,0.03);
+    }
+
+    .toc b{
+      display:block;
+      margin-bottom:8px;
+      font-size:14px;
+    }
+
+    .toc-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .toc a{
+      display:inline-block;
+      padding:8px 12px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,0.12);
+      background:rgba(0,0,0,0.14);
+      font-size:13px;
+      color:rgba(255,255,255,0.88);
+      transition:all 0.2s ease;
+    }
+
+    .toc a:hover{
+      text-decoration:none;
+      background:rgba(255,255,255,0.06);
+      transform:translateY(-1px);
+    }
+
+    .section{
+      margin-top:16px;
+      padding:22px 18px;
+      border-radius:18px;
+      border:1px solid var(--faint);
+      background:rgba(255,255,255,0.04);
+      box-shadow:var(--shadow);
+    }
+
+    .section h2{
+      margin:0 0 8px;
+      font-size:24px;
+      letter-spacing:-0.3px;
+    }
+
+    .meta{
+      margin:0 0 14px;
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    .section-intro{
+      margin:0 0 14px;
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    .pred{
+      margin:10px 0 0;
+      padding:14px 14px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,0.12);
+      background:rgba(0,0,0,0.16);
+    }
+
+    .pred b{
+      display:block;
+      margin-bottom:6px;
+      font-size:15px;
+    }
+
+    .pred p{
+      margin:0 0 8px;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .pred ul{
+      margin:0;
+      padding-left:18px;
+      color:rgba(255,255,255,0.88);
+    }
+
+    .pred li{
+      margin:6px 0;
+      color:rgba(255,255,255,0.88);
+    }
+
+    .highlight{
+      margin-top:14px;
+      padding:14px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,0.10);
+      background:rgba(255,255,255,0.03);
+    }
+
+    .highlight b{
+      display:block;
+      margin-bottom:6px;
+      font-size:14px;
+    }
+
+    .highlight span{
+      color:var(--muted);
+      font-size:14px;
+    }
 
     .footer{
-      margin-top: 24px;
+      margin-top:24px;
       text-align:center;
-      color: var(--muted);
-      font-size: 12.5px;
-    }
-    .site-status {
-      font-size: 0.85rem;
-      color: rgba(255, 255, 255, 0.6);
-      margin-bottom: 0.35rem;
+      color:var(--muted);
+      font-size:12.5px;
+      padding-bottom:10px;
     }
 
-    @media (max-width: 620px){
-      .topbar{ position: static; }
-      h1{ font-size: 28px; }
+    .site-status{
+      font-size:0.85rem;
+      color:rgba(255,255,255,0.6);
+      margin-bottom:0.35rem;
+    }
+
+    @media (max-width:920px){
+      h1{
+        font-size:34px;
+      }
+
+      .hero-points{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width:620px){
+      .topbar{
+        position:static;
+      }
+
+      .wrap{
+        padding:18px 14px 56px;
+      }
+
+      .hero{
+        padding:22px 16px;
+      }
+
+      h1{
+        font-size:30px;
+      }
+
+      .section,
+      .toc,
+      .pred{
+        padding:16px;
+      }
+
+      .buttons{
+        flex-direction:column;
+      }
+
+      .btn{
+        width:100%;
+      }
     }
   </style>
 </head>
@@ -211,43 +478,82 @@
       <nav>
         <a class="navlink" href="index.html">Home</a>
         <a class="navlink" href="papers.html">Papers</a>
-        <a class="navlink" href="predictions.html">Predictions</a>
-        <a class="navlink active" href="philosophy.html">Research Philosophy</a>
+        <a class="navlink active" href="predictions.html">Predictions</a>
+        <a class="navlink" href="philosophy.html">Research Philosophy</a>
         <a class="navlink" href="https://github.com/ozokozcaSOL/Sobolev-Ozok-Lattice" target="_blank" rel="noopener">GitHub</a>
       </nav>
     </div>
 
     <section class="hero">
+      <div class="eyebrow">Falsifiability and observational hooks</div>
       <h1>Predictions</h1>
+
       <p class="lead">
-        This page is a structured “map” of falsifiable SOL predictions, grouped by domain.
-        Each block links to the supporting Zenodo manuscript.
+        This page organizes the main falsifiable predictions of the Sobolev–Ozok Lattice (SOL) framework across cosmology, galaxies, black holes, and continuum behavior.
       </p>
 
+      <p class="lead">
+        The goal is not only to describe what SOL proposes, but to show where its claims can be challenged by data, constrained by observation, or distinguished from standard expectations.
+      </p>
+
+      <div class="hero-points">
+        <div class="hero-point">
+          <b>What this page does</b>
+          <span>Groups SOL predictions by domain so readers can quickly see where the framework becomes testable.</span>
+        </div>
+        <div class="hero-point">
+          <b>Why it matters</b>
+          <span>A framework becomes more serious when it makes concrete claims that can succeed or fail against observation.</span>
+        </div>
+        <div class="hero-point">
+          <b>How to use it</b>
+          <span>Jump to the domain you care about, then open the linked manuscript for the supporting derivation.</span>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <a class="btn btn-primary" href="#cosmology">Start with cosmology</a>
+        <a class="btn" href="#galaxies">Galaxies</a>
+        <a class="btn" href="#blackholes">Black holes</a>
+        <a class="btn" href="#math">Continuum behavior</a>
+      </div>
+
       <div class="toc">
-        <b>Jump to</b>
-        <a href="#cosmology">Cosmology</a>
-        <a href="#galaxies">Galaxies</a>
-        <a href="#blackholes">Black holes</a>
-        <a href="#math">Continuum & spectral stability</a>
+        <b>Jump to section</b>
+        <div class="toc-links">
+          <a href="#cosmology">Cosmology</a>
+          <a href="#galaxies">Galaxies</a>
+          <a href="#blackholes">Black holes</a>
+          <a href="#math">Continuum & spectral stability</a>
+        </div>
       </div>
     </section>
 
-    <!-- Cosmology -->
     <section id="cosmology" class="section">
       <h2>Cosmology</h2>
       <p class="meta">
-        Source: “From Pre-Geometric Coherence to the Present Universe…” (Zenodo: 16890398).
+        Supporting manuscript: “From Pre-Geometric Coherence to the Present Universe…” (Zenodo: 16890398)
+      </p>
+      <p class="section-intro">
+        In the cosmology branch, SOL proposes that discrete step-count structure can leave observable traces in large-scale behavior and propagation phenomena.
       </p>
 
       <div class="pred">
-        <b>Discrete step-count signatures (testable)</b>
+        <b>Discrete step-count signatures</b>
+        <p>These are examples of places where a discrete coherence history could leave structured observational effects.</p>
         <ul>
-          <li>CMB large-scale anomalies: suppressed low-ℓ power and possible large-scale alignment effects.</li>
-          <li>BAO: small, coherent phase offsets tied to the step-count discretization.</li>
-          <li>FRBs: small frequency-independent (achromatic) propagation delays distinguishable from plasma dispersion.</li>
-          <li>Standard sirens: possible GW–EM luminosity distance mismatches if the channels couple differently to the lattice.</li>
+          <li>CMB large-scale anomalies, including suppressed low-ℓ power and possible large-scale alignment effects.</li>
+          <li>BAO phase behavior with small coherent offsets tied to discrete step-count structure.</li>
+          <li>FRB propagation with small frequency-independent, achromatic delay components distinguishable from ordinary plasma dispersion.</li>
+          <li>Standard sirens showing possible GW–EM luminosity-distance mismatch if the two channels couple differently to the lattice structure.</li>
         </ul>
+      </div>
+
+      <div class="highlight">
+        <b>Why this matters</b>
+        <span>
+          These claims matter because they move SOL beyond conceptual cosmology and into possible observational discrimination.
+        </span>
       </div>
 
       <div class="buttons">
@@ -255,61 +561,91 @@
       </div>
     </section>
 
-    <!-- Galaxies -->
     <section id="galaxies" class="section">
       <h2>Galaxies</h2>
       <p class="meta">
-        Source: “SOL and the BTFR…” (Zenodo: 16884010).
+        Supporting manuscript: “SOL and the BTFR…” (Zenodo: 16884010)
+      </p>
+      <p class="section-intro">
+        At galaxy scale, SOL aims to recover regularities normally associated with dark-matter phenomenology through coherence structure rather than per-galaxy fitting.
       </p>
 
       <div class="pred">
-        <b>BTFR (slope ≈ 4) without tuning</b>
+        <b>BTFR without per-galaxy tuning</b>
+        <p>The main galaxy-scale claim is that the baryonic Tully–Fisher relation can emerge from the internal structure of the framework.</p>
         <ul>
-          <li>Fixed BTFR slope emerging from k = 2 coherence scaling, with no per-galaxy parameter fitting.</li>
-          <li>Rotation-curve behavior consistent with an asymptotically flat regime from the same k = 2 structure.</li>
+          <li>A BTFR slope near 4 emerging from k = 2 coherence scaling, without introducing a separate tuned parameter for each galaxy.</li>
+          <li>Rotation-curve behavior compatible with an asymptotically flat regime from the same structural logic.</li>
         </ul>
+      </div>
+
+      <div class="highlight">
+        <b>Why this matters</b>
+        <span>
+          This is one of the strongest applied hooks in the framework because it connects SOL directly to a major astrophysical scaling relation.
+        </span>
       </div>
 
       <div class="buttons">
         <a class="btn" href="https://zenodo.org/records/16884010" target="_blank" rel="noopener">Open paper on Zenodo</a>
-        <a class="btn" href="https://github.com/ozokozcaSOL/SOL-BTFR" target="_blank" rel="noopener">BTFR code repo</a>
+        <a class="btn" href="https://github.com/ozokozcaSOL/SOL-BTFR" target="_blank" rel="noopener">BTFR code repository</a>
       </div>
     </section>
 
-    <!-- Black holes -->
     <section id="blackholes" class="section">
       <h2>Black holes</h2>
       <p class="meta">
-        Source: “Black Holes from SOL: Derivation, … & Quasi-Black-Hole Signatures” (Zenodo: 16889440).
+        Supporting manuscript: “Black Holes from SOL: Derivation, Galaxy Occupation Thresholds, and Quasi-Black-Hole Signatures” (Zenodo: 16889440)
+      </p>
+      <p class="section-intro">
+        The black-hole branch focuses on threshold behavior and possible quasi-black-hole deviations that could distinguish SOL from standard compact-object expectations.
       </p>
 
       <div class="pred">
-        <b>QBH “discovery plot” (strong falsifiability)</b>
+        <b>QBH discovery relation</b>
+        <p>A strong falsifiability target is a structured relation between shadow deviation and ISCO shift.</p>
         <ul>
-          <li>A strict linear relation between shadow deviation and ISCO shift: δ<sub>sh</sub> = s(q) · δ<sub>ISCO</sub> with discrete slopes s(q) = 3, 6, 12 for q = 1, 2, 3.</li>
-          <li>Systems nearer the occupation threshold (low σ/σ<sub>min</sub>) should show larger deviations than high-dispersion systems.</li>
+          <li>A linear relation of the form δ<sub>sh</sub> = s(q) · δ<sub>ISCO</sub> with discrete slopes s(q) = 3, 6, 12 for q = 1, 2, 3.</li>
+          <li>Systems closer to the occupation threshold, corresponding to lower σ/σ<sub>min</sub>, should display larger deviations than high-dispersion systems.</li>
         </ul>
+      </div>
+
+      <div class="highlight">
+        <b>Why this matters</b>
+        <span>
+          This is valuable because it creates a sharp observational target: a structured relation rather than a vague qualitative difference.
+        </span>
       </div>
 
       <div class="buttons">
         <a class="btn" href="https://zenodo.org/records/16889440" target="_blank" rel="noopener">Open paper on Zenodo</a>
-        <a class="btn" href="papers.html#blackholes">Back to papers list</a>
+        <a class="btn" href="papers.html#black-holes">Back to papers list</a>
       </div>
     </section>
 
-    <!-- Math / continuum -->
     <section id="math" class="section">
       <h2>Continuum & spectral stability</h2>
       <p class="meta">
-        Source: “Spectral Stability and Continuum Limit of the SOL Model” (Zenodo: 17924486).
+        Supporting manuscript: “Spectral Stability and Continuum Limit of the SOL Model” (Zenodo: 17924486)
+      </p>
+      <p class="section-intro">
+        This branch focuses on mathematical consistency targets, especially how discrete models behave as resolution changes and whether continuum-like limits remain stable.
       </p>
 
       <div class="pred">
-        <b>Continuum limit behavior (mathematical targets)</b>
+        <b>Continuum-limit consistency</b>
+        <p>These predictions are less observational in the astrophysical sense, but they are still falsifiable within the mathematical behavior of the model.</p>
         <ul>
-          <li>Eigenmodes approach stable values across increasing lattice resolutions (used as a continuum-limit consistency test).</li>
-          <li>Identifiable “spectral stability” windows that can be used to validate discretization schemes.</li>
+          <li>Eigenmodes should approach stable values across increasing lattice resolutions, providing a continuum-limit consistency test.</li>
+          <li>There should be identifiable spectral-stability windows that help validate or reject discretization choices.</li>
         </ul>
+      </div>
+
+      <div class="highlight">
+        <b>Why this matters</b>
+        <span>
+          A discrete theory must not only fit ideas at large scale; it must also behave coherently under refinement and numerical testing.
+        </span>
       </div>
 
       <div class="buttons">
@@ -321,8 +657,11 @@
       <div class="site-status">
         Status: Active theoretical research program. Manuscripts archived on Zenodo and under continued development.
       </div>
+
       Maintained by Ozcan Ozok ·
       <a href="papers.html">Papers</a> ·
+      <a href="predictions.html">Predictions</a> ·
+      <a href="philosophy.html">Research Philosophy</a> ·
       <a href="https://github.com/ozokozcaSOL/Sobolev-Ozok-Lattice" target="_blank" rel="noopener">Repository</a> ·
       <a href="https://orcid.org/0009-0001-7901-2455" target="_blank" rel="noopener">ORCID</a>
     </div>
