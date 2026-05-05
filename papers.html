@@ -32,7 +32,7 @@
         "@id": "https://ozokozcasol.github.io/Sobolev-Ozok-Lattice/papers.html#itemlist",
         "name": "Sobolev–Ozok Lattice (SOL) papers",
         "itemListOrder": "https://schema.org/ItemListOrderAscending",
-        "numberOfItems": 12,
+        "numberOfItems": 14,
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -176,8 +176,30 @@
               "identifier": "10.5281/zenodo.18450337",
               "isPartOf": { "@type": "Periodical", "name": "Zenodo" },
               "author": { "@id": "https://ozokozcasol.github.io/Sobolev-Ozok-Lattice/#person" }
-            }
+            },
+            {
+              "@type": "ListItem",
+              "position": 13,
+              "item": {
+                "@type": "ScholarlyArticle",
+                "name": "Zenodo record 19841143",
+                "url": "https://zenodo.org/records/19841143",
+                "isPartOf": { "@type": "Periodical", "name": "Zenodo" },
+                "author": { "@id": "https://ozokozcasol.github.io/Sobolev-Ozok-Lattice/#person" }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 14,
+              "item": {
+                "@type": "ScholarlyArticle",
+                "name": "Zenodo record 19789815",
+                "url": "https://zenodo.org/records/19789815",
+                "isPartOf": { "@type": "Periodical", "name": "Zenodo" },
+                "author": { "@id": "https://ozokozcasol.github.io/Sobolev-Ozok-Lattice/#person" }
+              }
           }
+        }
         ]
       }
     ]
@@ -760,9 +782,22 @@
           </p>
           <a class="btn" href="https://zenodo.org/records/18447688" target="_blank" rel="noopener">Open foundation paper</a>
         </div>
-
         <div class="mini-card">
-          <h3>2. Planck-length emergence</h3>
+          <h3>2. A Minimal Axiomatic Framework</h3>
+          <p>
+            This paper presents a minimal axiomatic formulation of the Sobolev-Ozok Lattice (SOL)
+          </p>
+          <a class="btn" href="https://zenodo.org/records/19841143" target="_blank" rel="noopener">Open axioms paper</a>
+        </div>
+        <div class="mini-card">
+          <h3>3. Physics as Stable Sobolev-Order Structure</h3>
+          <p>
+            This work presents a mathematical foundation for the Sobolev–Ozok Lattice (SOL) framework
+          </p>
+          <a class="btn" href="https://zenodo.org/records/19789815" target="_blank" rel="noopener">Open mathematical foundation paper</a>
+        </div>
+        <div class="mini-card">
+          <h3>4. Planck-length emergence</h3>
           <p>
             Continue with the Planck-length paper to see how a key physical scale is treated inside the lattice framework.
           </p>
@@ -770,7 +805,7 @@
         </div>
 
         <div class="mini-card">
-          <h3>3. GR from SOL</h3>
+          <h3>5. GR from SOL</h3>
           <p>
             Then move to the emergent-geometry paper to see how curvature and Einstein-tensor structure are connected to coherence.
           </p>
@@ -830,6 +865,22 @@
         doi: "10.5281/zenodo.18447949",
         tags: ["Planck scale", "Wave support limits", "ℓp emergence"],
         summary: "Develops the emergence of the Planck scale inside the SOL lattice logic."
+      },
+      {
+        section: "Foundations & Core",
+        title: "Zenodo record 19841143 (replace with paper title)",
+        record: "19841143",
+        doi: "10.5281/zenodo.19841143"
+        tags: ["Start here", "SOL axioms"],
+        summary: "This paper presents a minimal axiomatic formulation of the Sobolev-Ozok Lattice (SOL)"
+      },
+      {
+        section: "Foundations & Core",
+        title: "Zenodo record 19789815 (replace with paper title)",
+        record: "19789815",
+        doi: "10.5281/zenodo.19789815"
+        tags: ["Start here", "Mathematical structure of SOL"],
+        summary: "This work presents a mathematical foundation for the Sobolev–Ozok Lattice (SOL) framework"
       },
       {
         section: "Foundations & Core",
@@ -963,6 +1014,8 @@
     function isKeyPaper(title) {
       return (
         title.includes("SOL Model") ||
+        title.includes("A Minimal Axiomatic Framework") ||
+        title.includes("Physics as Stable Sobolev-Order Structure") ||
         title.includes("Planck Length") ||
         title.includes("Recovering General Relativity")
       );
